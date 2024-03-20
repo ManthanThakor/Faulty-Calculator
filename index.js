@@ -26,3 +26,50 @@ function faultyDivision(num1, num2) {
 console.log("Faulty Addition: " + faultyAddition(20, 9)); 
 console.log("Faulty Subtraction: " + faultySubtraction(40, 2)); 
 console.log("Faulty Multiplication: " + faultyMultiplication(30, 9)); 
+
+
+// ---------------------------------------------
+
+// Define a function for the faulty calculator
+function faultyCalculator(operator, num1, num2) {
+    let result;
+
+    // Introduce some random errors
+    const randomNumber = Math.random();
+    if (randomNumber < 0.3) {
+        // Randomly return the sum instead of the actual result
+        result = num1 + num2;
+    } else if (randomNumber < 0.6) {
+        // Randomly return the product instead of the actual result
+        result = num1 * num2;
+    } else {
+        // Otherwise, perform the calculation normally
+        if (operator === '+') {
+            result = num1 + num2;
+        } else if (operator === '-') {
+            result = num1 - num2;
+        } else if (operator === '*') {
+            result = num1 * num2;
+        } else if (operator === '/') {
+            // Check if divisor is not zero
+            if (num2 !== 0) {
+                result = num1 / num2;
+            } else {
+                result = "Error: Division by zero!";
+            }
+        } else {
+            result = "Error: Invalid operator!";
+        }
+    }
+
+    // Return the result
+    return result;
+}
+
+// Test the faulty calculator
+console.log(faultyCalculator('+', 5, 3));   // This might return 8 (correct) or something else (faulty)
+console.log(faultyCalculator('-', 10, 4));  // This might return 6 (correct) or something else (faulty)
+console.log(faultyCalculator('*', 7, 2));   // This might return 14 (correct) or something else (faulty)
+console.log(faultyCalculator('/', 8, 2));   // This might return 4 (correct) or something else (faulty)
+console.log(faultyCalculator('/', 8, 0));   // This might return "Error: Division by zero!" (correct) or something else (faulty)
+console.log(faultyCalculator('?', 8, 2));   // This might return "Error: Invalid operator!" (correct) or something else (faulty)
