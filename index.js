@@ -67,9 +67,9 @@ function faultyCalculator(operator, num1, num2) {
 }
 
 // Test the faulty calculator
-console.log(faultyCalculator('+', 5, 3));   // This might return 8 (correct) or something else (faulty)
-console.log(faultyCalculator('-', 10, 4));  // This might return 6 (correct) or something else (faulty)
-console.log(faultyCalculator('*', 7, 2));   // This might return 14 (correct) or something else (faulty)
-console.log(faultyCalculator('/', 8, 2));   // This might return 4 (correct) or something else (faulty)
+console.log(faultyCalculator('+', 50, 30));   // This might return 8 (correct) or something else (faulty)
+console.log(faultyCalculator('-', 100, 40));  // This might return 6 (correct) or something else (faulty)
+console.log(faultyCalculator('*', 70, 20));   // This might return 14 (correct) or something else (faulty)
+console.log(faultyCalculator('/', 80, 20));   // This might return 4 (correct) or something else (faulty)
 console.log(faultyCalculator('/', 8, 0));   // This might return "Error: Division by zero!" (correct) or something else (faulty)
 console.log(faultyCalculator('?', 8, 2));   // This might return "Error: Invalid operator!" (correct) or something else (faulty)
