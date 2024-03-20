@@ -36,10 +36,10 @@ function faultyCalculator(operator, num1, num2) {
 
     // Introduce some random errors
     const randomNumber = Math.random();
-    if (randomNumber < 0.3) {
+    if (randomNumber < 0.1) {
         // Randomly return the sum instead of the actual result
         result = num1 + num2;
-    } else if (randomNumber < 0.6) {
+    } else if (randomNumber < 0.1) {
         // Randomly return the product instead of the actual result
         result = num1 * num2;
     } else {
@@ -73,3 +73,5 @@ console.log(faultyCalculator('*', 70, 20));   // This might return 14 (correct) 
 console.log(faultyCalculator('/', 80, 20));   // This might return 4 (correct) or something else (faulty)
 console.log(faultyCalculator('/', 8, 0));   // This might return "Error: Division by zero!" (correct) or something else (faulty)
 console.log(faultyCalculator('?', 8, 2));   // This might return "Error: Invalid operator!" (correct) or something else (faulty)
+
+
