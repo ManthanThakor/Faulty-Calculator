@@ -12,8 +12,6 @@ let obj = {
     "/": "**",
 }
 
-
-
 if (random > 0.1) {
     // Perform correct calculation
     console.log(`The result is ${a} ${c} ${b}`)
